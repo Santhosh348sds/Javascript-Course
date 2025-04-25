@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertor</title>
+</head>
+
+<body>
+    <h1 id="heading"></h1>
+    <input type="text" id="input" />
+    <button type="submit" onclick="convertInches()">Convert Cm to Inches</button>
+    <button type="submit" onclick="convertFahrenheit()">Convert Celcius to Fahrenheit</button>
+    <p id="result"></p>
+
+    <script>
+        // Set the heading for the selected element (h1)
+        let heading = document.getElementById('heading');
+        heading.innerHTML = "Cm to Inches";
+
+        // Creating the function to convert cm value to inches
+        function convertInches() {
+            // select the input value entered by user
+            let cmVal = document.getElementById('input').value;
+            // By defalut Input value is defined as string, so we need to change it's type as number
+            cmVal = Number(cmVal);
+            // Calculate the cm value to inches
+            let incVal = document.getElementById('result'); 
+            // store the result value in id='result' and display as output. 
+            const res = cmVal / 2.54;
+            incVal.innerHTML = res.toFixed(2) + " Inches";
+        }
+
+        //  Exercise -> Creating the function to convert Celcius value to Fahrenheit ..........
+        function convertFahrenheit() {
+            // select the input value entered by user
+            let celciusVal = document.getElementById("input").value;
+            // By defalut Input value is defined as string, so we need to change it's type as number
+            celciusVal = Number(celciusVal);
+            // Calculate the Celcius to Fahrenheit
+            const res = ((celciusVal * 9/5) + 32);
+            // store the result value in id='result' and display as output.
+            let fahrenVal = document.getElementById("result");
+            fahrenVal.innerHTML =  res.toFixed(2) + " Fahrenheit";
+        }
+    </script>
+</body>
+
+</html>
